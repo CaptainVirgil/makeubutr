@@ -212,3 +212,32 @@ button:focus-visible { outline: 2px solid var(--butter-bright); outline-offset: 
   margin: 18px 0 0;
 }
 .api-example .comment { color: var(--muted); }
+
+/* ---- the stock image ---- */
+
+.plate {
+  margin: 36px 0 32px;
+}
+
+.plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--edge);
+}
+
+.plate figcaption {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.plate figcaption .fig {
+  color: var(--cream);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.plate figcaption cite { font-family: var(--display); font-size: 15px; font-style: italic; color: var(--cream); }
