@@ -15,6 +15,10 @@ const POOLS = {
     'slow-fold',
     'cream',
     'temper',
+    'skim',
+    'brown',
+    'knead',
+    'reduce',
   ],
 
   // What you become.
@@ -31,6 +35,12 @@ const POOLS = {
     'a stick, unsalted, no label',
     'brown butter, which is worse',
     'a decorative rose on a cold plate',
+    'a pat shaped like a shell, for no reason',
+    'cultured, and insufferable about it',
+    'the tub your grandmother refilled with margarine',
+    'a foil rectangle in a hotel dish',
+    'drawn butter, in a small metal cup',
+    'an anonymous smear on a diner plate',
   ],
 
   // Where this ends up.
@@ -46,6 +56,12 @@ const POOLS = {
     'and freeze you for a holiday that never comes',
     'and finish a pan sauce with you',
     'and label you with a date, in pen, that is already wrong',
+    'and set you beside a basket of bread nobody touches',
+    'and scrape you off the knife with the side of the plate',
+    'and carry you through a hot kitchen without hurrying',
+    'and leave you in a window until you are useless',
+    'and blame you, later, for the sauce breaking',
+    'and pass you to the left without looking up',
   ],
 
   // The manner of the churning.
@@ -60,6 +76,10 @@ const POOLS = {
     'in front of everyone',
     'with the patience of a dairy',
     'until the solids separate',
+    'with both thumbs',
+    'while explaining exactly why',
+    'on a marble slab that has been in the freezer since Thursday',
+    'quietly, during dinner service',
   ],
 
   // Quantities of consequence.
@@ -82,6 +102,8 @@ const POOLS = {
     'a butter bell',
     'a cold bowl and warmer hands',
     'a spurtle, historically',
+    'a paddle that somebody\'s grandfather carved',
+    'a thermometer I do not need',
   ],
 };
 
@@ -98,6 +120,9 @@ const TEMPLATES = [
   'There is {apparatus} with your name on it, and I will {process} you {manner}.',
   'They said it could not be done. I will {process} you into {form} anyway.',
   'You get one warning. The warning is: {form}.',
+  'It ends the same way it always ends: {form}.',
+  'Do not make me {process} you into {form}.',
+  'By the time anyone notices, you will be {form}.',
 ];
 
 function pick(list, rand) {
