@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>makeubutr</title>
+<meta name="description" content="I will make you butter. A threat generator, and an API for the same.">
+<meta property="og:title" content="makeubutr">
+<meta property="og:description" content="I will make you butter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://makeubutr.com/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<a class="wordmark" href="/">makeubutr</a>
+
+<main>
+  <p class="threat" id="threat">I will churn you into a compound butter and serve you at a brunch you were not invited to.</p>
+
+  <div class="controls">
+    <button class="primary" id="reroll" type="button">Another threat</button>
+    <button id="copy" type="button">Copy</button>
+  </div>
+
+  <p class="hint" id="hint">Press space to re-roll</p>
+</main>
+
+<footer class="site-footer">
+  <a href="/why/">why this domain exists</a>
+  <a href="/links/">links</a>
+  <a href="/threat">/threat &rarr; json</a>
+</footer>
+
+<script type="module">
+  import { makeThreat } from '/grammar.js';
+
+  const el = document.getElementById('threat');
+  const hint = document.getElementById('hint');
+  const reroll = document.getElementById('reroll');
+  const copy = document.getElementById('copy');
+
+  let hintTimer;
+  function say(message) {
+    hint.textContent = message;
+    clearTimeout(hintTimer);
+    hintTimer = setTimeout(() => { hint.textContent = 'Press space to re-roll'; }, 2200);
+  }
+
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function next() {
+    // Avoid handing back the threat already on screen.
+    let threat = makeThreat();
+    for (let tries = 0; threat === el.textContent && tries < 5; tries++) threat = makeThreat();
+
+    if (reduceMotion) {
+      el.textContent = threat;
+      return;
+    }
+    el.classList.add('swapping');
+    setTimeout(() => {
+      el.textContent = threat;
+      el.classList.remove('swapping');
+    }, 120);
+  }
+
+  reroll.addEventListener('click', next);
+
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(el.textContent);
+      say('Copied. Use it kindly.');
+    } catch {
+      say('Clipboard said no. Select it yourself.');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== ' ' && event.key !== 'Enter') return;
+    // Let the buttons handle their own activation.
+    if (event.target.tagName === 'BUTTON') return;
+    event.preventDefault();
+    next();
+  });
+
+  next();
+</script>
+
+</body>
+</html>

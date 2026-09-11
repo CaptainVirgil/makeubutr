@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>makeubutr — links</title>
+<meta name="description" content="Where else the person behind makeubutr can be found.">
+<meta property="og:title" content="makeubutr — links">
+<meta property="og:description" content="Where else to find me.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://makeubutr.com/links/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<a class="wordmark" href="/">makeubutr</a>
+
+<article class="prose">
+  <h1>Elsewhere</h1>
+  <p class="pronunciation">The handle is retired. The person is not.</p>
+
+  <ul class="links-list">
+    <li>
+      <a href="https://stacksavr.com" rel="me">
+        <span>StackSavr</span>
+        <span class="what">managed IT for NW Indiana — the day job</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://runegateway.com" rel="me">
+        <span>Rune Gateway</span>
+        <span class="what">runes, a canvas, no explanation</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/CaptainVirgil" rel="me">
+        <span>GitHub</span>
+        <span class="what">code, mostly in public</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/CaptainVirgil/makeubutr">
+        <span>This site's source</span>
+        <span class="what">it is four files and a grammar</span>
+      </a>
+    </li>
+    <li>
+      <a href="/why/">
+        <span>Why &ldquo;makeubutr&rdquo;</span>
+        <span class="what">the entry, such as it is</span>
+      </a>
+    </li>
+    <!--
+      tyco.sh is the homelab domain and does not answer on the public internet —
+      linking it here would be a dead link for everyone but you, and would put the
+      name in front of anyone who scans it. Uncomment only if that stops being true.
+    <li>
+      <a href="https://tyco.sh" rel="me">
+        <span>tyco.sh</span>
+        <span class="what">the homelab</span>
+      </a>
+    </li>
+    -->
+  </ul>
+
+  <h2 class="pos" style="margin-top:44px">There is an API, because of course there is.</h2>
+  <pre class="api-example"><span class="comment">$</span> curl -s https://makeubutr.com/threat
+{
+  <span style="color:var(--butter)">"threat"</span>: <span style="color:var(--butter-bright)">"I will clarify you slowly, and use you sparingly, on weekends."</span>,
+  <span style="color:var(--butter)">"source"</span>: <span style="color:var(--butter-bright)">"makeubutr.com"</span>
+}
+
+<span class="comment"># many at once, up to 20</span>
+<span class="comment">$</span> curl -s <span style="color:var(--butter-bright)">'https://makeubutr.com/threat?n=5'</span>
+
+<span class="comment"># plain text, for shell scripts and MOTDs</span>
+<span class="comment">$</span> curl -s <span style="color:var(--butter-bright)">'https://makeubutr.com/threat?format=text'</span></pre>
+</article>
+
+<footer class="site-footer">
+  <a href="/">the threat generator</a>
+  <a href="/why/">why this domain exists</a>
+  <a href="/threat">/threat &rarr; json</a>
+</footer>
+
+</body>
+</html>
